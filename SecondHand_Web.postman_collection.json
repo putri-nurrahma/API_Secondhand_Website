@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "501d4f82-c636-4fd5-8d08-a26910ce2875",
+		"name": "SecondHand_Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24524185"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"name\": \"PutriNurrahmay\",\n    \"email\": \"putrinurrahmay23@gmail.com\",\n    \"password\": \"Maga2307\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base.url}}/users.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"users.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": {\n    \"email\": \"putrinurrahmay23@gmail.com\",\n    \"password\": \"Maga2307\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{base.url}}/users/sign_in.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"users",
+								"sign_in.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "List_Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/categories.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"categories.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/categories/1.json?id=1",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"categories",
+								"1.json"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Create Offer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"offer\": {\n    \"price\": 4000,\n    \"to_id\": 87312,\n    \"product_id\": 51457\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base.url}}/offers.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"offers.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List_Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/users/87312/offers.json?user_id=87312",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"users",
+								"87312",
+								"offers.json"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "87312"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update offer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"offer\": {\n    \"status\": \"initiated\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base.url}}/offers/40818.json?id=40818",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"offers",
+								"40818.json"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "40818"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product\": {\n    \"name\": \"BungaMerah\",\n    \"price\": \"100.0\",\n    \"description\": \"Indahnya\",\n    \"category_id\": 1,\n    \"images\" : \"2023-11-05T10:22:17.270Z\"\n  }\n}\n"
+						},
+						"url": {
+							"raw": "{{base.url}}/products.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"products.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List_Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/products.json?page=1",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"products.json"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/87314.json?id=87314",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"87314.json"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "87314"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/products/",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profiles",
+			"item": [
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"id\": 87314,\n        \"name\": \"Putri\",\n        \"email\": \"putrinurrahmay23@gmail.com\",\n        \"phone_number\": \"+3781910486902\",\n        \"address\": \"Suite 357 332 O'Connell Spur, Heidenreichside, CO 65592\",\n        \"city\": {\n            \"id\": 3,\n            \"name\": \"Jakarta\"\n        },\n        \"avatar\": {\n            \"filename\": \"mixue.png\",\n            \"url\": \"/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2c0QXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--86f5be07f664fb5eb25c412beb59cbaeee870dd2/mixue.png\"\n        }\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base.url}}/profiles.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"profiles.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base.url}}/profiles.json",
+							"host": [
+								"{{base.url}}"
+							],
+							"path": [
+								"profiles.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
